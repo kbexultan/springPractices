@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class SayHelloService {
     public String sayHello() {
-    return "sayHello";
+    return "Hello Bexultan";
 }
 }
