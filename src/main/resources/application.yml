@@ -5,3 +5,7 @@ spring:
 app:
   message: Hello
   timeout: 10
+
+practice:
+  feature:
+    enabled: true

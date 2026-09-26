@@ -1,15 +1,17 @@
 package com.example.demo.practice_1;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SayHelloController {
 
-    @Autowired
-    private SayHelloService sayHelloService;
+    private final SayHelloService sayHelloService;
+
+    public SayHelloController(SayHelloService sayHelloService) {
+        this.sayHelloService = sayHelloService;
+    }
 
     @GetMapping("/hello")
     public String hello() {
