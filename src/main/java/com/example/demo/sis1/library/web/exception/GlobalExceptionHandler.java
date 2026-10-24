@@ -1,5 +1,8 @@
-package com.example.demo.sis1.library.exception;
+package com.example.demo.sis1.library.web.exception;
 
+import com.example.demo.sis1.library.domain.exception.BookNotFoundException;
+import com.example.demo.sis1.library.domain.exception.DuplicateIsbnException;
+import com.example.demo.sis1.library.domain.exception.InvalidBookException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.*;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -29,6 +32,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DuplicateIsbnException.class)
     public ResponseEntity<ProblemDetail> conflict(DuplicateIsbnException ex, HttpServletRequest request) {
         return problem(HttpStatus.CONFLICT, ex.getMessage(), request);
+    }
+
+    @ExceptionHandler(InvalidBookException.class)
+    public ResponseEntity<ProblemDetail> invalidBook(InvalidBookException ex, HttpServletRequest request) {
+        return problem(HttpStatus.BAD_REQUEST, ex.getMessage(), request);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
