@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/library_db
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/library_db
     username: postgres
     password: Beka2005
     hikari:

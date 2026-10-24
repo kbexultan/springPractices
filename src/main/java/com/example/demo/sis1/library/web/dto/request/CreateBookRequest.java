@@ -1,5 +1,5 @@
 
-package com.example.demo.sis1.library.dto;
+package com.example.demo.sis1.library.web.dto.request;
 
 import jakarta.validation.constraints.*;
 import lombok.Getter;

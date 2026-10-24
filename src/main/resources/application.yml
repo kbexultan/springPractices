@@ -7,6 +7,9 @@ spring:
         pageable:
           max-page-size: 100
 
+  jpa:
+    open-in-view: false
+
 app:
   message: Hello
   timeout: 10
