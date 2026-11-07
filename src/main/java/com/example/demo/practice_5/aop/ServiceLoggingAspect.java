@@ -10,17 +10,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-/**
- * Practice 5: logs every call to a Service-layer bean and measures how long it took.
- * The services themselves are not changed: Spring wraps them in a proxy and runs this advice around each call.
- */
+
 @Aspect
 @Component
 public class ServiceLoggingAspect {
 
     private static final Logger log = LoggerFactory.getLogger(ServiceLoggingAspect.class);
 
-    /** Every method of every bean annotated with {@code @Service}. */
     @Pointcut("within(@org.springframework.stereotype.Service *)")
     public void serviceLayer() {
     }
